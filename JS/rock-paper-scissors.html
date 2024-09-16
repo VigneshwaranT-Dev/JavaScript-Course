@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, & Scissor Game</title>
+</head>
+<body>
+    <div>
+        <h2>Rock, Paper, & Scissor Game</h2>
+
+        <button onclick="btnClick('Rock')">Rock</button>
+        <button onclick="btnClick('Paper')">Paper</button>
+        <button onclick="btnClick('Scissor')">Scissor</button>
+    </div>
+</body>
+
+<script>
+    let win = 0;
+    let lose = 0;
+    let computerDecitionByNum;
+    let computerDecitionByValue
+
+    function btnClick(value){
+        computerDecitionByNum = Math.ceil(Math.random()*3);
+
+        computerDecitionByNum === 1 ? computerDecitionByValue = 'Rock' : 
+        computerDecitionByNum === 2 ? computerDecitionByValue = 'Paper' :  
+        computerDecitionByNum === 3 ? computerDecitionByValue = 'Scissor' : '';
+
+        if(value === 'Rock' && computerDecitionByValue === 'Paper'){
+            console.log(`You Choose ${value}`);
+            console.log(`Computer Choose ${computerDecitionByValue}`);
+            console.log('Computer Wins!!! You Lose!!!');
+        } else if (value === 'Paper' && computerDecitionByValue === 'Scissor'){
+            console.log(`You Choose ${value}`);
+            console.log(`Computer Choose ${computerDecitionByValue}`);
+            console.log('Computer Wins!!! You Lose!!!');
+        } else if (value === 'Scissor' && computerDecitionByValue === 'Rock') {
+            console.log(`You Choose ${value}`);
+            console.log(`Computer Choose ${computerDecitionByValue}`);
+            console.log('Computer Wins!!! You Lose!!!');
+        } else if(value === 'Paper' && computerDecitionByValue === 'Rock'){
+            console.log(`You Choose ${value}`);
+            console.log(`Computer Choose ${computerDecitionByValue}`);
+            console.log('You Wins!!! Computer Lose!!!');
+        } else if (value === 'Scissor' && computerDecitionByValue === 'Paper'){
+            console.log(`You Choose ${value}`);
+            console.log(`Computer Choose ${computerDecitionByValue}`);
+            console.log('You Wins!!! Computer Lose!!!');
+        } else if (value === 'Rock' && computerDecitionByValue === 'Scissor') {
+            console.log(`You Choose ${value}`);
+            console.log(`Computer Choose ${computerDecitionByValue}`);
+            console.log('You Wins!!! Computer Lose!!!');
+        } else {
+            console.log(`You Choose ${value}`);
+            console.log(`Computer Choose ${computerDecitionByValue}`);
+            console.log('Match Tie!!!');
+        }
+
+        console.log('');
+    }
+</script>
+</html>

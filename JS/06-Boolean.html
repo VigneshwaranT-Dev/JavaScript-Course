@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean</title>
+</head>
+<body>
+    <h1>Boolean</h1>
+
+
+</body>
+
+<script>
+    // let age = 14;
+
+    // if(age >= 18){
+    //     console.log('You can drive a Car.');
+    // } else {
+    //     console.log('You can\'t drive. Minimum 18 years to complete to drive a Car');
+    // }
+
+    let hour = new Date().getHours();
+    const name = 'Vigneshwaran';
+    
+    if (hour >= 6 && hour <= 12){
+        console.log(`Good Morning! ${name}.`);
+    } else if (hour >= 13 && hour <= 17){
+        console.log(`Good AfterNoon! ${name}.`);
+    } else {
+        console.log(`Good Night! ${name}.`); 
+    }
+
+
+    console.log(''); 
+
+
+    const age = 100;
+    const isHoliday = true;
+
+    if((age <= 6 || age >= 65) && !isHoliday){
+        console.log('Discount'); 
+    } else {
+        console.log('No Discount'); 
+    }
+
+</script>
+</html>
