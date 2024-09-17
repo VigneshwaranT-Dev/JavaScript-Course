@@ -74,84 +74,72 @@
 //#region Task - 4: Show Cart Quantity
     let cartQuantity = 0;
 
+    
     function showQuantityFn() {
         document.getElementById("cartQuantity").innerHTML = `Cart Quantity: ${cartQuantity}`;
     }
 
-    function showQuantity() {
-        this.showQuantityFn();
-    }
-
-    function addToCart() {
-        if(cartQuantity < 10){
-            cartQuantity++;
-        } else {
-            alert('The cart is Full')
-        }
-        this.showQuantityFn();
-    }
-
-    function add2Quantity() {
-        if(cartQuantity < 10){
-            cartQuantity += 2;
-        } else {
-            alert('The cart is Full')
-        }
-        this.showQuantityFn();
-    }
-
-    function add3Quantity() {
-        if(cartQuantity < 10){
-            cartQuantity += 3;
-        } else {
-            alert('The cart is Full')
-        }
-        
-        this.showQuantityFn();
-    }
-
-    function add4Quantity() {
-        if(cartQuantity < 10){
-            cartQuantity += 4;
-        } else {
-            alert('The cart is Full')
-        }
-        
-        this.showQuantityFn();
-    }
-
-    function add5Quantity() {
-        if(cartQuantity < 10){
-            cartQuantity += 5;
-        } else {
-            alert('The cart is Full')
-        }
-        
-        this.showQuantityFn();  
-    }
-
-    function resetCart() {
-        cartQuantity = 0;
-        this.showQuantityFn();
-    }
-
-    function hideQuantity() {
-        document.getElementById("cartQuantity").innerHTML = '';
-    }
-
-    function remove2Quantity() {
-        cartQuantity > 2 ? cartQuantity -= 2 : cartQuantity <= 1 ? cartQuantity = 0 : cartQuantity = 0
-        this.showQuantityFn();
-    }
-
-    function remove3Quantity() {
-        cartQuantity > 3 ? cartQuantity -= 3 : cartQuantity <= 2 ? cartQuantity = 0 : cartQuantity = 0
-        this.showQuantityFn();
-    }
-
-    const removeFromCart = () => {
-        cartQuantity > 0 ? cartQuantity-- : 0
-        this.showQuantityFn();
+    function updateCartQuantity(functionName) {
+        if(functionName === 'showQuantityFn'){
+            showQuantityFn();
+        } else if(functionName === 'addToCart'){
+            if(cartQuantity < 10){
+                cartQuantity++;
+            } else {
+                alert('The cart is Full');
+                return;
+            }
+           showQuantityFn();
+        } else if(functionName === 'add2Quantity'){
+            if(cartQuantity < 10){
+                cartQuantity += 2;
+            } else {
+                alert('The cart is Full');
+                return;
+            }
+            showQuantityFn();
+        } else if(functionName === 'add3Quantity'){
+            if(cartQuantity < 10){
+                cartQuantity += 3;
+            } else {
+                alert('The cart is Full');
+                return;
+            }
+            
+            showQuantityFn();
+        } else if(functionName === 'add4Quantity'){
+            if(cartQuantity < 10){
+                cartQuantity += 4;
+            } else {
+                alert('The cart is Full');
+                return;
+            }
+            
+            showQuantityFn();
+        } else if(functionName === 'add5Quantity'){
+            if(cartQuantity < 10){
+                cartQuantity += 5;
+            } else {
+                alert('The cart is Full');
+                return;
+            }
+            
+            showQuantityFn();  
+        } else if(functionName === 'resetCart'){
+            cartQuantity = 0;
+            showQuantityFn();
+        } else if(functionName === 'hideQuantity'){
+            document.getElementById("cartQuantity").innerHTML = '';
+        } else if(functionName === 'remove2Quantity'){
+            cartQuantity > 2 ? cartQuantity -= 2 : cartQuantity <= 1 ? cartQuantity = 0 : cartQuantity = 0
+            showQuantityFn();
+        } else if(functionName === 'remove3Quantity'){
+            cartQuantity > 3 ? cartQuantity -= 3 : cartQuantity <= 2 ? cartQuantity = 0 : cartQuantity = 0
+            showQuantityFn();
+        } else if(functionName === 'removeFromCart'){
+            cartQuantity > 0 ? cartQuantity-- : 0
+            showQuantityFn();
+        } 
     }
 
 
