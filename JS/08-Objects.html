@@ -11,20 +11,41 @@
 <script>
     const person = {
         name: 'Vigneshwaran',
-        age: 24
+        age: 24,
+        company: {
+		    name: 'Simplesolve Technologies Pvt., Ltd.',
+		    location: 'Chennai'
+	    },
+        fun: function sampleFunction(){
+		    console.log('This is a function which is inside an object.')
+	    }
     }
 
-    console.log(person);
-    console.log(`Hi I'm ${person.name} and I'm ${person.age} years old.`);
+    const jsonString = JSON.stringify(person);
+    console.log(JSON.parse(jsonString));
+    
 
-    person.name = 'Ryan Renolds'
-    console.log(person.name); // Ryan Renolds
+    // console.log(person.company.name);
+    // console.log(person.fun());
 
-    person.age = 40
-    console.log(person.age); // 40
 
-    person.occupation = 'Software developer'
-    console.log(person.occupation); // Software developer
+    // console.log(person);
+    // console.log(`Hi I'm ${person.name} and I'm ${person.age} years old.`);
+
+    // person.name = 'Ryan Renolds'
+    // console.log(person.name); // Ryan Renolds
+
+    // person.age = 40
+    // console.log(person.age); // 40
+
+    // person.occupation = 'Software developer'
+    // console.log(person.occupation); // Software developer
+    // console.log(person); 
+
+    // delete person.occupation;
+    // console.log(person); 
+
+    // console.log(typeof person) // object
     
 </script>
 </html>

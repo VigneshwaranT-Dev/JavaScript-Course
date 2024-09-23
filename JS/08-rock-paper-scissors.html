@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper & Scissor</title>
+</head>
+<body>
+    <div>
+        <button onclick="userClick('Rock')"> Rock </button>
+        <button onclick="userClick('Paper')"> Paper </button>
+        <button onclick="userClick('Scissor')"> Scissor </button>
+        <button onclick="resetScore()"> Reset Score </button>
+    </div>
+</body>
+<script>
+    let computerRandomNum = 0;
+    let computerMove = '';
+    let userMove = '';
+
+    let result = {
+        win: 0,
+        lose: 0,
+        tie: 0
+    }
+
+    function userClick(userMove) {
+        userMove = userMove;
+        computerRandomNum = Math.ceil(Math.random() * 3);
+        computerRandomNum === 1 ? computerMove = 'Rock' : 
+        computerRandomNum === 2 ? computerMove = 'Paper' :
+        computerRandomNum === 3 ? computerMove = 'Scissor' : ''
+
+        // if(userMove === 'Rock' && computerMove === 'Paper') {
+        //     result.lose++;
+        // } else if(userMove === 'Paper' && computerMove === 'Scissor') {
+        //     result.lose++;
+        // } else if(userMove === 'Scissor' && computerMove === 'Rock') {
+        //     result.lose++;
+        // } else if(userMove === 'Paper' && computerMove === 'Rock') {
+        //     result.win++;
+        // } else if(userMove === 'Scissor' && computerMove === 'Paper') {
+        //     result.win++;
+        // } else if(userMove === 'Rock' && computerMove === 'Scissor') {
+        //     result.win++;
+        // } else {
+        //     result.tie++;
+        // }
+
+        userMove === 'Rock' && computerMove === 'Paper' ? (result.lose++, resultPopup(userMove, computerMove)) :
+        userMove === 'Paper' && computerMove === 'Scissor' ? (result.lose++, resultPopup(userMove, computerMove)) :
+        userMove === 'Scissor' && computerMove === 'Rock' ? (result.lose++, resultPopup(userMove, computerMove)) :
+        userMove === 'Paper' && computerMove === 'Rock' ? (result.win++, resultPopup(userMove, computerMove)) :
+        userMove === 'Scissor' && computerMove === 'Paper' ? (result.win++, resultPopup(userMove, computerMove)) :
+        userMove === 'Rock' && computerMove === 'Scissor' ? (result.win++, resultPopup(userMove, computerMove)) : 
+        (result.tie++, resultPopup(userMove, computerMove));
+    }
+
+    function resultPopup(userMove, computerMove){
+        alert(`User Selects ${userMove} and Computer Selects ${computerMove}
+Win: ${result.win}, Lose: ${result.lose}, Tie: ${result.tie}`)
+    }
+
+    function resetScore() {
+        result.win = 0;
+        result.lose = 0;
+        result.tie = 0;
+    }
+</script>
+</html>
